@@ -21,6 +21,12 @@
   <ItemGroup>
     <ClCompile Include="..\Sources\main.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Sources\App.h" />
+    <ClInclude Include="..\Sources\Common.h" />
+    <ClInclude Include="..\Sources\Player.h" />
+    <ClInclude Include="..\Sources\UserInterface.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{AAB2B9F0-B904-4E10-AEC0-B1EBB33A6495}</ProjectGuid>

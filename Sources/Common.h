@@ -18,7 +18,7 @@ enum class ShipType
    SHIP_CANT_PLACE
 };
 
-enum class GameModeType
+enum class GameMode
 {
    SUPERVISED,
    RANDOM,
