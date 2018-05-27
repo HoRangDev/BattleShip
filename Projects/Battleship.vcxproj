@@ -22,9 +22,10 @@
     <ClCompile Include="..\Sources\main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Sources\App.h" />
     <ClInclude Include="..\Sources\Common.h" />
+    <ClInclude Include="..\Sources\GameInstance.h" />
     <ClInclude Include="..\Sources\Player.h" />
+    <ClInclude Include="..\Sources\Ship.h" />
     <ClInclude Include="..\Sources\UserInterface.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
