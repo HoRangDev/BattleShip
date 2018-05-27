@@ -30,3 +30,12 @@
 *.exe
 *.out
 *.app
+Projects/.vs/Battleship/v15/.suo
+*.db
+*.ipch
+*.ilk
+*.log
+*.pdb
+*.lastbuildstate
+*.tlog
+*.idb
