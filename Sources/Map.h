@@ -45,6 +45,11 @@ namespace BattleShip
       **/
       HitResultType HitCheck( const IntVec2& pos );
 
+      /*
+      * @brief 모든 배가 파괴되었는지 체크합니다.
+      **/
+      bool AllDestroyed( ) const;
+
    private:
       MapGrid     m_map;
       ShipList    m_ships;
