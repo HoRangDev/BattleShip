@@ -33,7 +33,7 @@ namespace BattleShip
 
    enum class BatchAxis
    {
-      XAxis,
-      YAxis
+      XAXIS,
+      YAXIS,
    };
 }
