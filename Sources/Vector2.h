@@ -36,6 +36,16 @@ namespace BattleShip
          return ( *this );
       }
 
+      inline bool operator==( const Vector2& rhs ) const
+      {
+         return ( x == rhs.x ) && ( y == rhs.y );
+      }
+
+      bool operator!=( cosnt Vector2& rhs ) const
+      {
+         return !( ( *this ) == rhs );
+      }
+
    public:
       Ty x;
       Ty y;
