@@ -1,32 +1,22 @@
 #pragma once
-
 #include "Common.h"
 
 namespace BattleShip
 {
-   enum class Direction
-   {
-      Left,
-      Right,
-      Up,
-      Down
-   };
-
-   class GameInstance;
+   class Map;
    class Ship
    {
-   public:
-      Ship( GameInstance& inst );
+      friend Map;
+   protected:
+      Ship( const IntVec2& position, int size );
 
-      HitResultType HitCheck( int x, int y );
+      IntVec2 GetPosition( ) const { return m_position; }
+      bool IsDestroyed( ) const { return ( m_size == m_hitCount ); }
 
    protected:
-      GameInstance& m_instance;
-      int   m_x;
-      int   m_y;
-      int   m_size;
-      int   m_hitCount;
-      bool* m_hitCheck;
+      IntVec2 m_position;
+      int     m_size;
+      int     m_hitCount;
 
    };
 }
