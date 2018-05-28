@@ -24,9 +24,11 @@
   <ItemGroup>
     <ClInclude Include="..\Sources\Common.h" />
     <ClInclude Include="..\Sources\GameInstance.h" />
+    <ClInclude Include="..\Sources\Map.h" />
     <ClInclude Include="..\Sources\Player.h" />
     <ClInclude Include="..\Sources\Ship.h" />
     <ClInclude Include="..\Sources\UserInterface.h" />
+    <ClInclude Include="..\Sources\Vector2.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
