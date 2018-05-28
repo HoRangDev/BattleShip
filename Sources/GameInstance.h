@@ -1,10 +1,10 @@
 #pragma once
-
 #include "Common.h"
 
 namespace BattleShip
 {
    class Player;
+   class Map;
    class GameInstance
    {
    public:
@@ -26,6 +26,7 @@ namespace BattleShip
 
       Player*  m_attacker;
       Player*  m_defender;
+      Map*     m_map;
 
    };
 }
