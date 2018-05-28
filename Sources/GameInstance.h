@@ -26,7 +26,6 @@ namespace BattleShip
 
       Player*  m_attacker;
       Player*  m_defender;
-      Map*     m_map;
 
    };
 }
