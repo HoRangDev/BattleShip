@@ -1,15 +1,13 @@
 #pragma once
 #include "Common.h"
 
-#include <array>
-
 namespace BattleShip
 {
    class Map;
    class Player
    {
    public:
-      Player( );
+      Player( int width, int height );
       ~Player( );
 
       /*
@@ -18,7 +16,7 @@ namespace BattleShip
       * @param pos   배가 있는지 체크할 위치
       * @return      Hit 결과
       **/
-      HitResultType HitCheck( const IntVec2& pos );
+      HitResult HitCheck( const IntVec2& pos );
       Map& GetMap( ) { return ( *m_map ); }
 
    protected:

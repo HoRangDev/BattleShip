@@ -22,6 +22,7 @@
     <ClCompile Include="..\Sources\GameInstance.cpp" />
     <ClCompile Include="..\Sources\main.cpp" />
     <ClCompile Include="..\Sources\Map.cpp" />
+    <ClCompile Include="..\Sources\Player.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Sources\Common.h" />
