@@ -19,7 +19,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\Sources\GameInstance.cpp" />
     <ClCompile Include="..\Sources\main.cpp" />
+    <ClCompile Include="..\Sources\Map.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Sources\Common.h" />
@@ -34,7 +36,7 @@
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{AAB2B9F0-B904-4E10-AEC0-B1EBB33A6495}</ProjectGuid>
     <RootNamespace>Battleship</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
