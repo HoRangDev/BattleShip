@@ -1,11 +1,23 @@
 #include "Player.h"
-#include "Map.h"
+#include "ShipMap.h"
+#include "HitMap.h"
 
 namespace BattleShip
 {
-   Player::Player( int width, int height ) :
-      m_map( new Map( width, height ) )
+   Player::Player( int width, int height, PlayerType type ) :
+      m_type( type ),
+      m_map( nullptr )
    {
+      switch ( type )
+      {
+      case PlayerType::ATTACKER:
+         m_map = new HitMap( width, height );
+         break;
+
+      case PlayerType::DEFENDER:
+         m_map = new ShipMap( width, height );
+         break;
+      }
    }
 
    Player::~Player( )
@@ -16,9 +28,13 @@ namespace BattleShip
    HitResult Player::HitCheck( const IntVec2& pos )
    {
       HitResult hitRes{ HitResultType::MISS, ShipType::SHIP_ERROR };
-      if ( m_map != nullptr )
+      if ( m_type == PlayerType::DEFENDER )
       {
-         hitRes = m_map->HitCheck( pos );
+         ShipMap* map = static_cast< ShipMap* >( m_map );
+         if ( map != nullptr )
+         {
+            hitRes = map->HitCheck( pos );
+         }
       }
 
       return hitRes;
@@ -26,12 +42,14 @@ namespace BattleShip
 
    bool Player::AllDestroyed( ) const
    {
-      if ( m_map == nullptr )
+      if ( m_map == nullptr ||
+           m_type == PlayerType::ATTACKER )
       {
          return false;
       }
 
-      return m_map->AllDestroyed( );
+      ShipMap* map = static_cast< ShipMap* >( m_map );
+      return map->AllDestroyed( );
    }
 
 }

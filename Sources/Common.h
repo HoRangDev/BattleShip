@@ -8,7 +8,13 @@
 namespace BattleShip
 {
    using IntVec2 = Vector2<int>;
-   enum class HitResultType
+   enum class PlayerType
+   {
+      ATTACKER,
+      DEFENDER
+   };
+
+   enum HitResultType
    {
       NONE = -1,
       MISS,
@@ -45,13 +51,13 @@ namespace BattleShip
       {
       case HitResultType::HIT:
       case HitResultType::DESTROY:
-         return 'O';
+         return '!';
 
       case HitResultType::MISS:
          return 'X';
 
       case HitResultType::NONE:
-         return '?';
+         return 'O';
       }
 
       return 'E';

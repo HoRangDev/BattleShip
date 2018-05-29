@@ -7,7 +7,7 @@ namespace BattleShip
    class Player
    {
    public:
-      Player( int width, int height );
+      Player( int width, int height, PlayerType type );
       ~Player( );
 
       /*
@@ -23,10 +23,16 @@ namespace BattleShip
       **/
       bool AllDestroyed( ) const;
 
+      PlayerType GetType( ) const { return m_type; }
       Map* GetMap( ) { return m_map; }
+
+      void ResetMap( );
 
    protected:
       Map*     m_map;
+
+   private:
+      PlayerType m_type;
 
    };
 }
