@@ -12,6 +12,18 @@ namespace BattleShip
       {
       }
 
+      Vector2( const Vector2& vec ) :
+         Vector2( vec.x , vec.y )
+      {
+      }
+
+      Vector2& operator=( const Vector2& rhs )
+      {
+         x = rhs.x;
+         y = rhs.y;
+         return ( *this );
+      }
+
       Vector2 operator+( const Vector2& rhs ) const
       {
          return Vector2( x + rhs.x, y + rhs.y );
