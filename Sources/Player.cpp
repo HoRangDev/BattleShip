@@ -24,4 +24,14 @@ namespace BattleShip
       return hitRes;
    }
 
+   bool Player::AllDestroyed( ) const
+   {
+      if ( m_map == nullptr )
+      {
+         return false;
+      }
+
+      return m_map->AllDestroyed( );
+   }
+
 }
