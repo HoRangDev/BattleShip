@@ -29,14 +29,23 @@
     <ClCompile Include="..\Sources\Player.cpp">
       <Filter>Sources\Core</Filter>
     </ClCompile>
-    <ClCompile Include="..\Sources\Map.cpp">
-      <Filter>Sources\Core</Filter>
-    </ClCompile>
     <ClCompile Include="..\Sources\GameInstance.cpp">
       <Filter>Sources\Core</Filter>
     </ClCompile>
     <ClCompile Include="..\Sources\main.cpp">
       <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\RandomGameInstance.cpp">
+      <Filter>Sources\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\ShipMap.cpp">
+      <Filter>Sources\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\HitMap.cpp">
+      <Filter>Sources\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\Map.cpp">
+      <Filter>Sources\Core</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -75,6 +84,12 @@
     </ClInclude>
     <ClInclude Include="..\Sources\UserInterface.h">
       <Filter>Sources\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sources\ShipMap.h">
+      <Filter>Sources\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sources\HitMap.h">
+      <Filter>Sources\Core</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

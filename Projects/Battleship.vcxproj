@@ -20,10 +20,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\GameInstance.cpp" />
+    <ClCompile Include="..\Sources\HitMap.cpp" />
     <ClCompile Include="..\Sources\main.cpp" />
     <ClCompile Include="..\Sources\Map.cpp" />
     <ClCompile Include="..\Sources\Player.cpp" />
+    <ClCompile Include="..\Sources\RandomGameInstance.cpp" />
     <ClCompile Include="..\Sources\Ship.cpp" />
+    <ClCompile Include="..\Sources\ShipMap.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Sources\Aircraft.h" />
@@ -32,10 +35,12 @@
     <ClInclude Include="..\Sources\Cruiser.h" />
     <ClInclude Include="..\Sources\Destroyer.h" />
     <ClInclude Include="..\Sources\GameInstance.h" />
+    <ClInclude Include="..\Sources\HitMap.h" />
     <ClInclude Include="..\Sources\Map.h" />
     <ClInclude Include="..\Sources\Player.h" />
     <ClInclude Include="..\Sources\RandomGameInstance.h" />
     <ClInclude Include="..\Sources\Ship.h" />
+    <ClInclude Include="..\Sources\ShipMap.h" />
     <ClInclude Include="..\Sources\UserInterface.h" />
     <ClInclude Include="..\Sources\Vector2.h" />
   </ItemGroup>
