@@ -1,6 +1,8 @@
 #pragma once
 #include "Vector2.h"
 
+#include <string>
+
 #define SAFE_DELETE(x) { if(x!=nullptr){delete x;} x = nullptr; }
 
 namespace BattleShip

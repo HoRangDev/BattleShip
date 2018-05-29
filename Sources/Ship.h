@@ -17,6 +17,8 @@ namespace BattleShip
 
       void IncreaseHitCount( );
 
+      virtual std::string GetName( ) const = 0;
+
    protected:
       ShipType m_type;
       IntVec2  m_position;

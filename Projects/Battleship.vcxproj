@@ -26,10 +26,15 @@
     <ClCompile Include="..\Sources\Ship.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Sources\Aircraft.h" />
+    <ClInclude Include="..\Sources\BattleShip.h" />
     <ClInclude Include="..\Sources\Common.h" />
+    <ClInclude Include="..\Sources\Cruiser.h" />
+    <ClInclude Include="..\Sources\Destroyer.h" />
     <ClInclude Include="..\Sources\GameInstance.h" />
     <ClInclude Include="..\Sources\Map.h" />
     <ClInclude Include="..\Sources\Player.h" />
+    <ClInclude Include="..\Sources\RandomGameInstance.h" />
     <ClInclude Include="..\Sources\Ship.h" />
     <ClInclude Include="..\Sources\UserInterface.h" />
     <ClInclude Include="..\Sources\Vector2.h" />
