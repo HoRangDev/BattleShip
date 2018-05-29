@@ -36,4 +36,27 @@ namespace BattleShip
       XAXIS,
       YAXIS,
    };
+
+   static char ShipTypeToChar( ShipType type )
+   {
+      switch ( type )
+      {
+      case ShipType::DESTROYER:
+         return 'D';
+         
+      case ShipType::AIRCRAFT:
+         return 'A';
+
+      case ShipType::BATTLESHIP:
+         return 'B';
+
+      case ShipType::CRUISER:
+         return 'C';
+
+      case ShipType::SHIP_NONE:
+         return 'O';
+      }
+
+      return '-';
+   }
 }
