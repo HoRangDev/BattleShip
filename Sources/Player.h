@@ -23,7 +23,7 @@ namespace BattleShip
       **/
       bool AllDestroyed( ) const;
 
-      Map& GetMap( ) { return ( *m_map ); }
+      Map* GetMap( ) { return m_map; }
 
    protected:
       Map*     m_map;
