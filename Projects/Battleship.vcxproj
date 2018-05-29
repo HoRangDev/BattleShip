@@ -23,6 +23,7 @@
     <ClCompile Include="..\Sources\main.cpp" />
     <ClCompile Include="..\Sources\Map.cpp" />
     <ClCompile Include="..\Sources\Player.cpp" />
+    <ClCompile Include="..\Sources\Ship.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Sources\Common.h" />

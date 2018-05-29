@@ -1,12 +1,13 @@
 #pragma once
+#include "Common.h"
 
 namespace BattleShip
 {
    class UserInterface
    {
    public:
-      UserInterface( unsigned int x, unsigned int y, unsigned int width, unsigned int height ) :
-         m_x( x ), m_y( y ),
+      UserInterface( const IntVec2& position, unsigned int width, unsigned int height ) :
+         m_position( position ),
          m_width( width ), m_height( height ),
          m_drawable( true )
       {
@@ -15,8 +16,7 @@ namespace BattleShip
       void SetDrawable( bool drawable ) { m_drawable = drawable; }
       bool IsDrawable( ) const { return m_drawable; }
 
-      unsigned int GetX( ) const { return m_x; }
-      unsigned int GetY( ) const { return m_y; }
+      IntVec2 GetPosition( ) const { return m_position; }
 
       unsigned int GetWidth( ) const { return m_width; }
       unsigned int GetHeight( ) const { return m_height; }
@@ -34,8 +34,7 @@ namespace BattleShip
 
    private:
       bool              m_drawable;
-      unsigned int      m_x;
-      unsigned int      m_y;
+      IntVec2           m_position;
 
       unsigned int      m_width;
       unsigned int      m_height;

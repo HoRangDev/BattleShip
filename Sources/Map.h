@@ -19,7 +19,7 @@ namespace BattleShip
 
       /*
       * @brief Ship을 위한 일종의 Factory method 이다. Place 로 전달된 배 타입에 따라 적절하게 배치후 Ship 객체를 저장한다.
-      * @param pos   배가 배치될 origin 위치
+      * @param pos   배가 배치될 origin 위치 [좌측 상단부터 (0,0)로 시작하여 우측 하단 (width, height)]
       * @param type  배의 타입
       * @param axis  배가 어느 축을 기준으로 배치될지 결정함.
       * @param axisDirection Axis 를 기준으로 Delta 방향으로 배치됨
