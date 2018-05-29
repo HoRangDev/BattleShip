@@ -29,7 +29,7 @@ namespace BattleShip
          return Vector2( x - rhs.x, y - rhs.y );
       }
 
-      Vector2& operator-=( const Vector2& rhs ) const
+      Vector2& operator-=( const Vector2& rhs )
       {
          x -= rhs.x;
          y -= rhs.y;
@@ -41,7 +41,7 @@ namespace BattleShip
          return ( x == rhs.x ) && ( y == rhs.y );
       }
 
-      bool operator!=( cosnt Vector2& rhs ) const
+      bool operator!=( const Vector2& rhs ) const
       {
          return !( ( *this ) == rhs );
       }
