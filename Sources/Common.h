@@ -59,4 +59,10 @@ namespace BattleShip
 
       return '-';
    }
+
+   struct HitResult
+   {
+      HitResultType type;
+      ShipType      ship;
+   };
 }

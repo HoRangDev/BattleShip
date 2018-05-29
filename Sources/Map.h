@@ -6,12 +6,7 @@
 namespace BattleShip
 {
    class Ship;
-   struct HitResult
-   {
-      HitResultType type;
-      ShipType      ship;
-   };
-
+   
    // 2D Array of ShipType
    using MapGrid = ShipType**;
    using ShipList = std::vector<Ship*>;
