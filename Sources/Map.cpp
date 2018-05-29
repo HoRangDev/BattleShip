@@ -115,6 +115,21 @@ namespace BattleShip
          {
             hitRes.type = HitResultType::HIT;
             hitRes.ship = m_map[ pos.y ][ pos.x ];
+
+            if ( hitResApply )
+            {
+               for ( auto ship : m_ships )
+               {
+                  if ( ship->GetPosition( ) == pos )
+                  {
+                     ship->IncreaseHitCount( );
+                     if ( ship->IsDestroyed( ) )
+                     {
+                        hitRes.type = HitResultType::DESTROY;
+                     }
+                  }
+               }
+            }
          }
       }
 

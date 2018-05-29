@@ -8,6 +8,7 @@ namespace BattleShip
    protected:
       Ship( const IntVec2& position, ShipType type, int size );
 
+   public:
       ShipType GetType( ) const { return m_type; }
       IntVec2 GetPosition( ) const { return m_position; }
       int GetSize( ) const { return m_size; }
