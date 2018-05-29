@@ -9,6 +9,8 @@ namespace BattleShip
       HitMap( int width, int height );
       virtual ~HitMap( );
 
+      void CheckAs( const IntVec2& pos, HitResultType type );
+
       virtual char GetCharFrom( const IntVec2& pos ) const override;
       virtual void Reset( ) override;
 

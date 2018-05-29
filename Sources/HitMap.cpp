@@ -39,6 +39,14 @@ namespace BattleShip
       }
    }
 
+   void HitMap::CheckAs( const IntVec2& pos, HitResultType type )
+   {
+      if ( IsInBound( pos ) )
+      {
+         m_hitMap[ pos.y ][ pos.x ] = type;
+      }
+   }
+
    char HitMap::GetCharFrom( const IntVec2& pos ) const
    {
       if ( !IsInBound( pos ) )
