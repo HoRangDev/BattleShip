@@ -19,6 +19,7 @@ namespace BattleShip
       * @return      Hit °á°ú
       **/
       HitResultType HitCheck( const IntVec2& pos );
+      Map& GetMap( ) { return ( *m_map ); }
 
    protected:
       Map*     m_map;
