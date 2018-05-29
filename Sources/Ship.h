@@ -3,17 +3,18 @@
 
 namespace BattleShip
 {
-   class Map;
    class Ship
    {
-      friend Map;
    protected:
       Ship( const IntVec2& position, ShipType type, int size );
 
       ShipType GetType( ) const { return m_type; }
       IntVec2 GetPosition( ) const { return m_position; }
       int GetSize( ) const { return m_size; }
+      int GetHitCount( ) const { return m_hitCount; }
       bool IsDestroyed( ) const { return ( m_size == m_hitCount ); }
+
+      void IncreaseHitCount( );
 
    protected:
       ShipType m_type;
