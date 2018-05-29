@@ -14,6 +14,12 @@ namespace BattleShip
       for ( int y = 0; y < m_height; ++y )
       {
          m_map[ y ] = new ShipType[ m_width ];
+
+         // Initialize
+         for ( int x = 0; x < m_width; ++x )
+         {
+            m_map[ y ][ x ] = ShipType::SHIP_NONE;
+         }
       }
    }
 
@@ -153,5 +159,24 @@ namespace BattleShip
       }
 
       return true;
+   }
+
+   void Map::Reset( )
+   {
+      // Reset grid
+      for ( int y = 0; y < m_height; ++y )
+      {
+         for ( int x = 0; x < m_width; ++x )
+         {
+            m_map[ y ][ x ] = ShipType::SHIP_NONE;
+         }
+      }
+
+      // Reset ship list
+      for ( auto ship : m_ships )
+      {
+         delete ship;
+      }
+      m_ships.clear( );
    }
 }

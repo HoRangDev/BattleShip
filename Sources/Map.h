@@ -48,6 +48,8 @@ namespace BattleShip
       **/
       bool AllDestroyed( ) const;
 
+      void Reset( );
+
    private:
       int         m_width;
       int         m_height;
