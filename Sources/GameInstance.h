@@ -8,14 +8,7 @@ namespace BattleShip
    class GameInstance
    {
    public:
-      GameInstance( int width, int height, GameMode mode ) :
-         m_mode( mode ),
-         m_width( width ), m_height( height ),
-         m_turnCount( 0 ),
-         m_attacker( nullptr ), m_defender( nullptr )
-      {
-      }
-
+      GameInstance( int width, int height, GameMode mode );
       virtual ~GameInstance( );
 
       virtual void Init( ) = 0;
@@ -24,6 +17,9 @@ namespace BattleShip
 
       GameMode GetMode( ) const { return m_mode; }
       int GetTurnCount( ) const { return m_turnCount; }
+
+      Player& GetAttacker( ) { return ( *m_attacker ); }
+      Player& GetDefender( ) { return ( *m_defender ); }
 
    protected:
       GameMode m_mode;
