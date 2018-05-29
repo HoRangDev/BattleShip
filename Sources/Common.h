@@ -10,10 +10,10 @@ namespace BattleShip
    using IntVec2 = Vector2<int>;
    enum class HitResultType
    {
+      NONE = -1,
       MISS,
       HIT,
-      DESTROY,
-      GAME_CLEAR
+      DESTROY
    };
 
    enum ShipType
@@ -38,6 +38,24 @@ namespace BattleShip
       XAXIS,
       YAXIS,
    };
+
+   static char HitResultTypeToChar( HitResultType type )
+   {
+      switch ( type )
+      {
+      case HitResultType::HIT:
+      case HitResultType::DESTROY:
+         return 'O';
+
+      case HitResultType::MISS:
+         return 'X';
+
+      case HitResultType::NONE:
+         return '?';
+      }
+
+      return 'E';
+   }
 
    static char ShipTypeToChar( ShipType type )
    {
