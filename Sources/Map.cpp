@@ -1,5 +1,8 @@
 #include "Map.h"
-#include "Ship.h"
+#include "Aircraft.h"
+#include "BattleShip.h"
+#include "Cruiser.h"
+#include "Destroyer.h"
 
 namespace BattleShip
 {
@@ -35,19 +38,22 @@ namespace BattleShip
    bool Map::Place( const IntVec2& pos, ShipType type, BatchAxis axis, int axisDirection )
    {
       Ship* newShip = nullptr;
-      // @TODO: Implement allocation of ship by type
       switch ( type )
       {
-      case ShipType::BATTLESHIP:
-         break;
-
       case ShipType::AIRCRAFT:
+         newShip = new Aircraft( pos );
          break;
 
+      case ShipType::BATTLESHIP:
+         newShip = new BattleShip( pos );
+         break;
+      
       case ShipType::CRUISER:
+         newShip = new Cruiser( pos );
          break;
 
       case ShipType::DESTROYER:
+         newShip = new Destroyer( pos );
          break;
 
       default:
