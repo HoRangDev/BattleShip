@@ -41,8 +41,7 @@ namespace BattleShip
 
    char HitMap::GetCharFrom( const IntVec2& pos ) const
    {
-      if ( pos.x < 0 || pos.y < 0 ||
-           pos.x >= m_width || pos.y >= m_height )
+      if ( !IsInBound( pos ) )
       {
          return '-';
       }

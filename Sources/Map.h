@@ -26,6 +26,13 @@ namespace BattleShip
       void Print( ) const;
 
    protected:
+      inline bool IsInBound( const IntVec2& pos ) const
+      {
+         return ( pos.x >= 0 && pos.y >= 0 &&
+                  pos.x < m_width && pos.y < m_height );
+      }
+
+   protected:
       int         m_width;
       int         m_height;
 

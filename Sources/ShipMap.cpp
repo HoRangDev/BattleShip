@@ -141,8 +141,7 @@ namespace BattleShip
    HitResult ShipMap::ConstHitCheck( const IntVec2& pos ) const
    {
       HitResult hitRes{ HitResultType::MISS, ShipType::SHIP_NONE };
-      if ( pos.x < 0 || pos.y < 0 ||
-           pos.x > m_width || pos.y > m_height )
+      if ( !IsInBound( pos ) )
       {
          hitRes.ship = ShipType::SHIP_ERROR;
       }
