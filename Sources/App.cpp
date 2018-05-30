@@ -5,7 +5,12 @@
 
 namespace BattleShip
 {
-   App::App( int width, int height, GameMode mode ) :
+   App::App( 
+      const std::string& name,
+      int windowWidth, int windowHeight, int width, int height, GameMode mode ) :
+      m_name( name ),
+      m_windowWidth( windowWidth ),
+      m_windowHeight( windowHeight ),
       m_gInst( nullptr )
    {
       switch ( mode )
@@ -31,11 +36,15 @@ namespace BattleShip
 
    int App::Run( )
    {
-      // @TODO: Add Initialize of pdcurses(ncurses)
       if ( m_gInst != nullptr )
       {
          initscr( );
          curs_set( 0 );
+         resize_term( m_windowHeight, m_windowWidth );
+
+         mvprintw( 0, 0, m_name.c_str( ) );
+
+         refresh( );
 
          m_gInst->Play( );
 
