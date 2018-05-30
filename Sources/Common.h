@@ -28,6 +28,7 @@ namespace BattleShip
       REDWHITE,
       WHITERED,
       MAGENTAWHITE,
+      WHITEMAGENTA,
    };
 
    enum HitResultType
