@@ -53,13 +53,13 @@ namespace BattleShip
       {
       case HitResultType::HIT:
       case HitResultType::DESTROY:
-         return '!';
+         return '*';
 
       case HitResultType::MISS:
          return 'X';
 
       case HitResultType::NONE:
-         return 'O';
+         return '.';
       }
 
       return 'E';
