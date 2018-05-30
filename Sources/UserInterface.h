@@ -6,7 +6,8 @@ namespace BattleShip
    class UserInterface
    {
    public:
-      UserInterface( const IntVec2& position, unsigned int width, unsigned int height ) :
+      UserInterface( const IntVec2& position, 
+                     unsigned int width, unsigned int height ) :
          m_position( position ),
          m_width( width ), m_height( height ),
          m_drawable( true )

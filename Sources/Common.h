@@ -3,6 +3,7 @@
 
 #include <string>
 #include <random>
+#include <ncurses.h>
 
 #define SAFE_DELETE(x) { if(x!=nullptr){delete x;} x = nullptr; }
 
