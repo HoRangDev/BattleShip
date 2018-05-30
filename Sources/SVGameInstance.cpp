@@ -15,7 +15,6 @@ namespace BattleShip
    {
       m_defenderMap = static_cast< ShipMap* >( m_defender->GetMap( ) );
       m_defenderMap->PlaceRandomly( );
-      m_defenderMap->Print( );
    }
 
    void SVGameInstance::Update( )

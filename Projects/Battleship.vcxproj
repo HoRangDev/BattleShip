@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\Sources\App.cpp" />
     <ClCompile Include="..\Sources\GameInstance.cpp" />
     <ClCompile Include="..\Sources\HitMap.cpp" />
     <ClCompile Include="..\Sources\main.cpp" />
@@ -30,6 +31,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Sources\Aircraft.h" />
+    <ClInclude Include="..\Sources\App.h" />
     <ClInclude Include="..\Sources\BattleShip.h" />
     <ClInclude Include="..\Sources\Common.h" />
     <ClInclude Include="..\Sources\Cruiser.h" />
@@ -37,6 +39,7 @@
     <ClInclude Include="..\Sources\GameInstance.h" />
     <ClInclude Include="..\Sources\HitMap.h" />
     <ClInclude Include="..\Sources\Map.h" />
+    <ClInclude Include="..\Sources\MapUI.h" />
     <ClInclude Include="..\Sources\Player.h" />
     <ClInclude Include="..\Sources\SVGameInstance.h" />
     <ClInclude Include="..\Sources\Ship.h" />

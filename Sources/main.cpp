@@ -1,26 +1,10 @@
-#include "SVGameInstance.h"
+#include "App.h"
 
-#include <iostream>
-#include <curses.h>
-
-// Test curses
 int main( )
 {
-   BattleShip::SVGameInstance ginst{ 10, 10 };
-   ginst.Play( );
-   //initscr( );
+   BattleShip::App app{ 
+      10, 10,
+      BattleShip::GameMode::SUPERVISED };
 
-   //keypad( stdscr, true );
-   //curs_set( 0 );
-   //noecho( );
-
-   //char userName[ 8 ];
-   //printw( "Hello~" );
-   //scanw( "%s", userName );
-
-   //printw( "%s\n", userName );
-   //refresh( );
-   //getch( );
-   //endwin( );
-   return 0;
+   return app.Run( );
 }

@@ -47,6 +47,9 @@
     <ClCompile Include="..\Sources\SVGameInstance.cpp">
       <Filter>Sources\Core</Filter>
     </ClCompile>
+    <ClCompile Include="..\Sources\App.cpp">
+      <Filter>Sources\Core</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Sources\Common.h">
@@ -89,6 +92,12 @@
       <Filter>Sources\Core</Filter>
     </ClInclude>
     <ClInclude Include="..\Sources\SVGameInstance.h">
+      <Filter>Sources\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sources\MapUI.h">
+      <Filter>Sources\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sources\App.h">
       <Filter>Sources\Core</Filter>
     </ClInclude>
   </ItemGroup>
