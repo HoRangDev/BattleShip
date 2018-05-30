@@ -4,6 +4,9 @@
 #include "Cruiser.h"
 #include "Destroyer.h"
 
+#include <tuple>
+#include <array>
+
 namespace BattleShip
 {
    ShipMap::ShipMap( int width, int height ) :
@@ -20,8 +23,6 @@ namespace BattleShip
             m_map[ y ][ x ] = ShipType::SHIP_NONE;
          }
       }
-
-      Print( );
    }
 
    ShipMap::~ShipMap( )
@@ -155,6 +156,37 @@ namespace BattleShip
       }
 
       return hitRes;
+   }
+
+   void ShipMap::PlaceRandomly( )
+   {
+      constexpr unsigned int RandomPlaceNum = 6;
+      std::array<ShipType, RandomPlaceNum> shipInfos;
+      shipInfos[ 0 ] = ShipType::AIRCRAFT;
+      shipInfos[ 1 ] = ShipType::BATTLESHIP;
+      shipInfos[ 2 ] = ShipType::CRUISER;
+      shipInfos[ 3 ] = ShipType::CRUISER;
+      shipInfos[ 4 ] = ShipType::DESTROYER;
+      shipInfos[ 5 ] = ShipType::DESTROYER;
+
+      for ( auto type : shipInfos )
+      {
+         bool isPlaced = false;
+         while ( !isPlaced )
+         {
+            IntVec2 randPos;
+            randPos.x = GenRandInt( 0, 100000 ) % m_width;
+            randPos.y = GenRandInt( 0, 100000 ) % m_height;
+
+            int axisDir = GenRandInt( 0, 4 );
+            axisDir = ( axisDir >= 2 ) ? -1 : 1;
+
+            int axisNum = GenRandInt( 0, 100 );
+            auto axis = ( axisNum >= 49 ) ? BatchAxis::XAXIS : BatchAxis::YAXIS;
+
+            isPlaced = Place( randPos, type, axis, axisDir );
+         }
+      }
    }
 
    bool ShipMap::AllDestroyed( ) const

@@ -17,8 +17,6 @@ namespace BattleShip
             m_hitMap[ y ][ x ] = HitResultType::NONE;
          }
       }
-
-      Print( );
    }
 
    HitMap::~HitMap( )
