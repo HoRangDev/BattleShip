@@ -15,9 +15,9 @@ namespace BattleShip
          wborder( m_window, '|', '|', '-', '-', '+', '+', '+', '+' );
          mvwprintw( m_window, 0, m_name.length( ) / 2, m_name.c_str( ) );
 
-         wattron( m_window, COLOR_PAIR( B_COLOR_GREENBLACK ) );
+         wattron( m_window, COLOR_PAIR( ColorSet::GREENBLACK ) );
          mvwprintw( m_window, y, x, ("Turn: " + std::to_string( m_turn )).c_str( ) );
-         wattroff( m_window, COLOR_PAIR( B_COLOR_GREENBLACK ) );
+         wattroff( m_window, COLOR_PAIR( ColorSet::GREENBLACK ) );
 
          for ( auto ship : m_ships )
          {
@@ -26,6 +26,7 @@ namespace BattleShip
             // TYPE: Size*(ship character)
             if ( ship != nullptr )
             {
+               ColorSet color = ColorSet::WHITEBLACK;
                char typeChar = ShipTypeToChar( ship->GetType( ) );
                ss << ship->GetName( ) << ": ";
                for ( int count = 0; count < ship->GetSize( ); ++count )
@@ -35,10 +36,12 @@ namespace BattleShip
 
                if ( ship->IsDestroyed( ) )
                {
-                  wattron( m_window, COLOR_PAIR( B_COLOR_REDBLACK ) );
+                  color = ColorSet::REDBLACK;
                }
+
+               wattron( m_window, color );
                mvwprintw( m_window, y + 1, x, ss.str( ).c_str( ) );
-               wattroff( m_window, COLOR_PAIR( B_COLOR_REDBLACK ) );
+               wattroff( m_window, color );
 
                ++y;
             }

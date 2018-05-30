@@ -44,9 +44,10 @@ namespace BattleShip
 
          // Color settings
          start_color( );
-         init_pair( B_COLOR_GREENBLACK, COLOR_GREEN, COLOR_BLACK );
-         init_pair( B_COLOR_REDBLACK, COLOR_RED, COLOR_BLACK );
-         init_pair( B_COLOR_YELLOWBLACK, COLOR_YELLOW, COLOR_BLACK );
+         init_pair( ColorSet::WHITEBLACK, COLOR_WHITE, COLOR_BLACK );
+         init_pair( ColorSet::GREENBLACK, COLOR_GREEN, COLOR_BLACK );
+         init_pair( ColorSet::REDBLACK, COLOR_RED, COLOR_BLACK );
+         init_pair( ColorSet::YELLOWBLACK, COLOR_YELLOW, COLOR_BLACK );
 
          mvprintw( 0, 0, m_name.c_str( ) );
 
