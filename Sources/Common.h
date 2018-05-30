@@ -2,6 +2,7 @@
 #include "Vector2.h"
 
 #include <string>
+#include <random>
 
 #define SAFE_DELETE(x) { if(x!=nullptr){delete x;} x = nullptr; }
 
@@ -80,10 +81,19 @@ namespace BattleShip
          return 'C';
 
       case ShipType::SHIP_NONE:
-         return 'O';
+         return '.';
       }
 
       return '-';
+   }
+
+   static int GenRandInt( int min, int max )
+   {
+      std::random_device rd;
+      std::mt19937 gen( rd( ) );
+      std::uniform_int_distribution<> dis( min, max );
+
+      return dis( gen );
    }
 
    struct HitResult
