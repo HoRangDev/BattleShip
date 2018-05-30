@@ -8,7 +8,7 @@ namespace BattleShip
    public:
       Destroyer( const IntVec2& position ) :
          Ship( position,
-               ShipType::DESTROYER, 1)
+               ShipType::DESTROYER, 2)
       {
       }
 
