@@ -4,7 +4,7 @@ int main( )
 {
    BattleShip::App app{ 
       "бс < BattleShip > бс",
-      55, 35,
+      55, 27,
       10, 10,
       BattleShip::GameMode::SUPERVISED };
 
