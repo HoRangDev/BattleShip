@@ -35,9 +35,6 @@
     <ClCompile Include="..\Sources\main.cpp">
       <Filter>Sources</Filter>
     </ClCompile>
-    <ClCompile Include="..\Sources\RandomGameInstance.cpp">
-      <Filter>Sources\Core</Filter>
-    </ClCompile>
     <ClCompile Include="..\Sources\ShipMap.cpp">
       <Filter>Sources\Core</Filter>
     </ClCompile>
@@ -45,6 +42,9 @@
       <Filter>Sources\Core</Filter>
     </ClCompile>
     <ClCompile Include="..\Sources\Map.cpp">
+      <Filter>Sources\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Sources\SVGameInstance.cpp">
       <Filter>Sources\Core</Filter>
     </ClCompile>
   </ItemGroup>
@@ -79,9 +79,6 @@
     <ClInclude Include="..\Sources\Player.h">
       <Filter>Sources\Core</Filter>
     </ClInclude>
-    <ClInclude Include="..\Sources\RandomGameInstance.h">
-      <Filter>Sources\Core</Filter>
-    </ClInclude>
     <ClInclude Include="..\Sources\UserInterface.h">
       <Filter>Sources\UI</Filter>
     </ClInclude>
@@ -89,6 +86,9 @@
       <Filter>Sources\Core</Filter>
     </ClInclude>
     <ClInclude Include="..\Sources\HitMap.h">
+      <Filter>Sources\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sources\SVGameInstance.h">
       <Filter>Sources\Core</Filter>
     </ClInclude>
   </ItemGroup>

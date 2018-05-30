@@ -1,29 +1,29 @@
-#include "RandomGameInstance.h"
+#include "SVGameInstance.h"
 #include "Player.h"
 #include "ShipMap.h"
 
 namespace BattleShip
 {
-   RandomGameInstance::RandomGameInstance( int width, int height ) :
+   SVGameInstance::SVGameInstance( int width, int height ) :
       m_defenderMap( nullptr ),
       GameInstance( width, height,
-                    GameMode::RANDOM )
+                    GameMode::SUPERVISED )
    {
    }
 
-   void RandomGameInstance::Init( )
+   void SVGameInstance::Init( )
    {
       m_defenderMap = static_cast< ShipMap* >( m_defender->GetMap( ) );
       m_defenderMap->PlaceRandomly( );
       m_defenderMap->Print( );
    }
 
-   void RandomGameInstance::Update( )
+   void SVGameInstance::Update( )
    {
       // @TODO: Get Input/Check end condition
    }
 
-   void RandomGameInstance::Render( )
+   void SVGameInstance::Render( )
    {
       // @TODO: Impl Draw UIs
    }

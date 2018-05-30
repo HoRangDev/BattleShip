@@ -1,4 +1,4 @@
-#include "RandomGameInstance.h"
+#include "SVGameInstance.h"
 
 #include <iostream>
 #include <curses.h>
@@ -6,7 +6,7 @@
 // Test curses
 int main( )
 {
-   BattleShip::RandomGameInstance ginst{ 10, 10 };
+   BattleShip::SVGameInstance ginst{ 10, 10 };
    ginst.Play( );
    //initscr( );
 

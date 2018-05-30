@@ -4,10 +4,10 @@
 namespace BattleShip
 {
    class ShipMap;
-   class RandomGameInstance : public GameInstance
+   class SVGameInstance : public GameInstance
    {
    public:
-      RandomGameInstance( int width, int height );
+      SVGameInstance( int width, int height );
 
       virtual void Init( ) override;
       virtual void Update( ) override;
