@@ -18,10 +18,43 @@ namespace BattleShip
          {
             for ( int x = 0; x < maxX; ++x )
             {
-               std::string printStr{ m_map->GetCharFrom( IntVec2{ x,y } ) };
+               char typeChar = m_map->GetCharFrom( IntVec2{ x,y } );
+               std::string printStr{ typeChar };
+
+               ColorSet color = ColorSet::WHITEBLACK;
+               // for coloring
+               switch ( typeChar )
+               {
+               case '*':
+                  color = ColorSet::WHITERED;
+                  break;
+
+               case 'X':
+                  color = ColorSet::BLACKYELLOW;
+                  break;
+
+               case 'B':
+                  color = ColorSet::REDWHITE;
+                  break;
+
+               case 'A':
+                  color = ColorSet::BLACKCYAN;
+                  break;
+
+               case 'C':
+                  color = ColorSet::WHITEGREEN;
+                  break;
+
+               case 'D':
+                  color = ColorSet::WHITEMAGENTA;
+                  break;
+               }
+
+               wattron( m_window, COLOR_PAIR( color ) );
                mvwprintw( m_window,
                           y + 1 + origin.y, x + 1 + origin.x,
                           printStr.c_str( ) );
+               wattroff( m_window, COLOR_PAIR( color ) );
                origin.x += m_space.x;
             }
 
