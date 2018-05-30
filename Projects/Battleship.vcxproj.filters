@@ -50,6 +50,9 @@
     <ClCompile Include="..\Sources\App.cpp">
       <Filter>Sources\Core</Filter>
     </ClCompile>
+    <ClCompile Include="..\Sources\MapUI.cpp">
+      <Filter>Sources\UI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Sources\Common.h">

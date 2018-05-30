@@ -4,6 +4,7 @@
 namespace BattleShip
 {
    class ShipMap;
+   class MapUI;
    class SVGameInstance : public GameInstance
    {
    public:
@@ -14,7 +15,12 @@ namespace BattleShip
       virtual void Render( ) override;
 
    private:
+      /* Dependency **/
       ShipMap* m_defenderMap;
+
+      /* UI **/
+      MapUI*   m_attackerMapUI;
+      MapUI*   m_defenderMapUI;
 
    };
 }
