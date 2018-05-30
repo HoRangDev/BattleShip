@@ -2,6 +2,7 @@
 #include "SVGameInstance.h"
 
 #include <curses.h>
+#include <string>
 
 namespace BattleShip
 {
@@ -56,11 +57,9 @@ namespace BattleShip
          init_pair( ColorSet::WHITEMAGENTA, COLOR_WHITE, COLOR_MAGENTA );
 
          mvprintw( 0, 0, m_name.c_str( ) );
-
          refresh( );
 
          m_gInst->Play( );
-
          return endwin( );
       }
 

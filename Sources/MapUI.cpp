@@ -13,6 +13,34 @@ namespace BattleShip
          int maxX = m_map->GetWidth( );
          int maxY = m_map->GetHeight( );
 
+         // 위치 출력
+         IntVec2 pos = GetPosition( );
+         int offsetY = 0;
+
+         // Column
+         int offsetX = 0;
+         int count = 0;
+         while ( count < maxX )
+         {
+            mvprintw( pos.y + maxY + 2,
+               ( pos.x + count ) + offsetX + 1,
+                      std::to_string( count + 1 ).c_str() );
+            offsetX += m_space.x;
+            ++count;
+         }
+
+         // Row
+         count = 0;
+         while ( count < maxY )
+         {
+            std::string printingStr{ NationalToAlphabet( count ) };
+            mvprintw( ( pos.y + count ) + offsetY + 1 ,
+                      pos.x - 1,
+                      printingStr.c_str( ) );
+            offsetY += m_space.y;
+            ++count;
+         }
+
          IntVec2 origin{ };
          for ( int y = 0; y < maxY; ++y )
          {
@@ -63,6 +91,7 @@ namespace BattleShip
          }
 
          wrefresh( m_window );
+         refresh( );
       }
    }
 }

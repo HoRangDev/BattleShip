@@ -42,10 +42,11 @@ namespace BattleShip
 
       HitResultType**  m_hitMap;
 
-   private:
-      GameMode m_mode;
       int m_width;
       int m_height;
+
+   private:
+      GameMode m_mode;
       int m_turnCount;
 
 

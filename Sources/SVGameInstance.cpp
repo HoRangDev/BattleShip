@@ -25,20 +25,20 @@ namespace BattleShip
 
       m_defenderMapUI = new MapUI(
          "Defender",
-         IntVec2{ 1, 2 },
-         22, 12,
+         IntVec2{ 3, 2 },
+         m_width * 3 + 2, m_height + 2,
          m_defenderMap );
-      m_defenderMapUI->SetSpace( IntVec2{ 1, 0 } );
+      m_defenderMapUI->SetSpace( IntVec2{ 2, 0 } );
 
       m_attackerMapUI = new MapUI(
          "Attacker",
-         IntVec2{ 1, 14 },
-         22, 12,
+         IntVec2{ 3, 6 + m_height },
+         m_width * 3 + 2, m_height + 2,
          attackerMap );
-      m_attackerMapUI->SetSpace( IntVec2{ 1, 0 } );
+      m_attackerMapUI->SetSpace( IntVec2{ 2, 0 } );
 
       m_statUI = new StatUI( "< Status >",
-                             IntVec2{ 26, 2 },
+                             IntVec2{ m_width * 3 + 6, 2 },
                              20, 9, 
                              m_defenderMap->GetShipList( ) );
    }
