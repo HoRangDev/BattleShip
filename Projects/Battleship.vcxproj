@@ -26,6 +26,7 @@
     <ClCompile Include="..\Sources\Map.cpp" />
     <ClCompile Include="..\Sources\MapUI.cpp" />
     <ClCompile Include="..\Sources\Player.cpp" />
+    <ClCompile Include="..\Sources\StatUI.cpp" />
     <ClCompile Include="..\Sources\SVGameInstance.cpp" />
     <ClCompile Include="..\Sources\Ship.cpp" />
     <ClCompile Include="..\Sources\ShipMap.cpp" />
@@ -42,6 +43,7 @@
     <ClInclude Include="..\Sources\Map.h" />
     <ClInclude Include="..\Sources\MapUI.h" />
     <ClInclude Include="..\Sources\Player.h" />
+    <ClInclude Include="..\Sources\StatUI.h" />
     <ClInclude Include="..\Sources\SVGameInstance.h" />
     <ClInclude Include="..\Sources\Ship.h" />
     <ClInclude Include="..\Sources\ShipMap.h" />

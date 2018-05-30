@@ -3,6 +3,7 @@
 #include "HitMap.h"
 #include "ShipMap.h"
 #include "MapUI.h"
+#include "StatUI.h"
 
 namespace BattleShip
 {
@@ -10,6 +11,7 @@ namespace BattleShip
       m_defenderMap( nullptr ),
       m_attackerMapUI( nullptr ),
       m_defenderMapUI( nullptr ),
+      m_statUI( nullptr ),
       GameInstance( width, height,
                     GameMode::SUPERVISED )
    {
@@ -26,7 +28,6 @@ namespace BattleShip
          IntVec2{ 1, 2 },
          22, 12,
          m_defenderMap );
-
       m_defenderMapUI->SetSpace( IntVec2{ 1, 0 } );
 
       m_attackerMapUI = new MapUI(
@@ -34,14 +35,21 @@ namespace BattleShip
          IntVec2{ 1, 14 },
          22, 12,
          attackerMap );
-
       m_attackerMapUI->SetSpace( IntVec2{ 1, 0 } );
 
+      m_statUI = new StatUI( "< Status >",
+                             IntVec2{ 26, 2 },
+                             20, 9, 
+                             m_defenderMap->GetShipList( ) );
    }
 
    void SVGameInstance::Update( )
    {
       // @TODO: Get Input/Check end condition
+      if ( m_statUI != nullptr )
+      {
+         m_statUI->SetTurn( GetTurnCount( ) );
+      }
    }
 
    void SVGameInstance::Render( )
@@ -55,6 +63,11 @@ namespace BattleShip
       if ( m_defenderMap != nullptr )
       {
          m_defenderMapUI->Draw( );
+      }
+
+      if ( m_statUI != nullptr )
+      {
+         m_statUI->Draw( );
       }
    }
 
