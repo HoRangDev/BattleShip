@@ -7,6 +7,10 @@
 
 #define SAFE_DELETE(x) { if(x!=nullptr){delete x;} x = nullptr; }
 
+#define B_COLOR_GREENBLACK 1
+#define B_COLOR_REDBLACK 2
+#define B_COLOR_YELLOWBLACK 3
+
 namespace BattleShip
 {
    using IntVec2 = Vector2<int>;
