@@ -23,6 +23,11 @@ namespace BattleShip
       REDBLACK,
       YELLOWBLACK,
       WHITEGREEN,
+      BLACKYELLOW,
+      BLACKCYAN,
+      REDWHITE,
+      WHITERED,
+      MAGENTAWHITE,
    };
 
    enum HitResultType

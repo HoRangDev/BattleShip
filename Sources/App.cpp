@@ -48,6 +48,11 @@ namespace BattleShip
          init_pair( ColorSet::GREENBLACK, COLOR_GREEN, COLOR_BLACK );
          init_pair( ColorSet::REDBLACK, COLOR_RED, COLOR_BLACK );
          init_pair( ColorSet::YELLOWBLACK, COLOR_YELLOW, COLOR_BLACK );
+         init_pair( ColorSet::WHITEGREEN, COLOR_WHITE, COLOR_GREEN );
+         init_pair( ColorSet::BLACKYELLOW, COLOR_BLACK, COLOR_YELLOW );
+         init_pair( ColorSet::BLACKCYAN, COLOR_BLACK, COLOR_CYAN );
+         init_pair( ColorSet::REDWHITE, COLOR_RED, COLOR_WHITE );
+         init_pair( ColorSet::MAGENTAWHITE, COLOR_MAGENTA, COLOR_WHITE );
 
          mvprintw( 0, 0, m_name.c_str( ) );
 
