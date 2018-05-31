@@ -56,6 +56,9 @@
     <ClCompile Include="..\Sources\StatUI.cpp">
       <Filter>Sources\UI</Filter>
     </ClCompile>
+    <ClCompile Include="..\Sources\InputUI.cpp">
+      <Filter>Sources\UI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Sources\Common.h">
@@ -107,6 +110,9 @@
       <Filter>Sources\Core</Filter>
     </ClInclude>
     <ClInclude Include="..\Sources\StatUI.h">
+      <Filter>Sources\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sources\InputUI.h">
       <Filter>Sources\UI</Filter>
     </ClInclude>
   </ItemGroup>
