@@ -7,7 +7,6 @@ namespace BattleShip
    {
       if ( IsDrawable( ) )
       {
-
          m_bIsAbleToUseInput = false;
 
          constexpr unsigned int MaxLength = 5;

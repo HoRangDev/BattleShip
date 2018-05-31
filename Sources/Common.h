@@ -24,6 +24,7 @@ namespace BattleShip
       REDBLACK,
       YELLOWBLACK,
       WHITEGREEN,
+      GREENWHITE,
       BLACKYELLOW,
       BLACKCYAN,
       REDWHITE,

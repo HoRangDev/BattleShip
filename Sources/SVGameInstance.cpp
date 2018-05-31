@@ -76,9 +76,6 @@ namespace BattleShip
                if ( m_defender->AllDestroyed( ) )
                {
                   curs_set( 0 );
-                  m_attackerMapUI->SetDrawable( false );
-                  m_defenderMapUI->SetDrawable( false );
-                  m_statUI->SetDrawable( false );
                   m_inputUI->SetDrawable( false );
                   // m_gameEndUI->SetDrawable( true );
                   m_bGameEnd = true;

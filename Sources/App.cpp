@@ -50,6 +50,7 @@ namespace BattleShip
          init_pair( ColorSet::REDBLACK, COLOR_RED, COLOR_BLACK );
          init_pair( ColorSet::YELLOWBLACK, COLOR_YELLOW, COLOR_BLACK );
          init_pair( ColorSet::WHITEGREEN, COLOR_WHITE, COLOR_GREEN );
+         init_pair( ColorSet::GREENWHITE, COLOR_GREEN, COLOR_WHITE );
          init_pair( ColorSet::BLACKYELLOW, COLOR_BLACK, COLOR_YELLOW );
          init_pair( ColorSet::BLACKCYAN, COLOR_BLACK, COLOR_CYAN );
          init_pair( ColorSet::REDWHITE, COLOR_RED, COLOR_WHITE );

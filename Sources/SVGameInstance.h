@@ -8,6 +8,7 @@ namespace BattleShip
    class MapUI;
    class StatUI;
    class InputUI;
+   class GameEndUI;
    class SVGameInstance : public GameInstance
    {
    public:
@@ -23,10 +24,11 @@ namespace BattleShip
       ShipMap* m_defenderMap;
 
       /* UI **/
-      MapUI*   m_attackerMapUI;
-      MapUI*   m_defenderMapUI;
-      StatUI*  m_statUI;
-      InputUI* m_inputUI;
+      MapUI*      m_attackerMapUI;
+      MapUI*      m_defenderMapUI;
+      StatUI*     m_statUI;
+      InputUI*    m_inputUI;
+      GameEndUI*  m_gameEndUI;
 
    };
 }
