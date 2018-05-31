@@ -61,7 +61,10 @@ namespace BattleShip
          refresh( );
 
          m_gInst->Play( );
-         return endwin( );
+         
+         auto end = endwin( );
+         getch( );
+         return end;
       }
 
       return 1;
