@@ -15,6 +15,10 @@ namespace BattleShip
       {
          this->Init( );
          m_bGameEnd = false;
+
+         // Pre-Render
+         this->Render( );
+
          while ( !m_bGameEnd )
          {
             this->Update( );

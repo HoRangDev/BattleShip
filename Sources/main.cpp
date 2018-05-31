@@ -2,7 +2,7 @@
 
 int main( )
 {  
-   constexpr int WindowWidth = 60;
+   constexpr int WindowWidth = 62;
    constexpr int WindowHeight = 30;
    constexpr int BoardWidth = 10;
    constexpr int BoardHeight = 10;
