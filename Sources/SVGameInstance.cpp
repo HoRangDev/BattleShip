@@ -1,3 +1,4 @@
+// @Author Yang Kyowon(yangkyowon@kookmin.ac.kr)
 #include "SVGameInstance.h"
 #include "Player.h"
 #include "HitMap.h"

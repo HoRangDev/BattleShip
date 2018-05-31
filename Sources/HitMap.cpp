@@ -1,3 +1,4 @@
+// @Author Yang Kyowon(yangkyowon@kookmin.ac.kr)
 #include "HitMap.h"
 #include <iostream>
 

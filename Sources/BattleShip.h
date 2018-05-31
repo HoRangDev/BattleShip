@@ -1,3 +1,4 @@
+// @Author Yang Kyowon(yangkyowon@kookmin.ac.kr)
 #pragma once
 #include "Ship.h"
 

@@ -1,3 +1,4 @@
+// @Author Yang Kyowon(yangkyowon@kookmin.ac.kr)
 #include "GameEndUI.h"
 
 namespace BattleShip

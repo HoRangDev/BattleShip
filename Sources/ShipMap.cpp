@@ -1,3 +1,4 @@
+// @Author Yang Kyowon(yangkyowon@kookmin.ac.kr)
 #include "ShipMap.h"
 #include "Aircraft.h"
 #include "BattleShip.h"

@@ -1,3 +1,4 @@
+// @Author Yang Kyowon(yangkyowon@kookmin.ac.kr)
 #include "Player.h"
 #include "ShipMap.h"
 #include "HitMap.h"
