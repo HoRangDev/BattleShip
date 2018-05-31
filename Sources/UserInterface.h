@@ -36,6 +36,7 @@ namespace BattleShip
       {
          if ( m_drawable )
          {
+            Clear( );
             this->DrawImpl( );
          }
       }

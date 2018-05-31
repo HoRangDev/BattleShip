@@ -9,6 +9,12 @@ namespace BattleShip
       {
          this->Clear( );
       }
+      else
+      {
+         Draw( );
+      }
+
+      wrefresh( m_window );
    }
    void UserInterface::Clear( )
    {
@@ -19,7 +25,5 @@ namespace BattleShip
             mvwprintw( m_window, y, x, " " );
          }
       }
-
-      wrefresh( m_window );
    }
 }

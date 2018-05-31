@@ -66,14 +66,21 @@ namespace BattleShip
                m_inputUI->SetLatestHitResult( hitRes );
                if ( m_attackerMap != nullptr )
                {
-                  m_attackerMap->CheckAs( targetPos, hitRes.type );
-                  IncreaseTurnCount( );
+                  bool isNewCheck = m_attackerMap->CheckAs( targetPos, hitRes.type );
+                  if ( isNewCheck )
+                  {
+                     IncreaseTurnCount( );
+                  }
                }
 
                if ( m_defender->AllDestroyed( ) )
                {
                   curs_set( 0 );
+                  m_attackerMapUI->SetDrawable( false );
+                  m_defenderMapUI->SetDrawable( false );
+                  m_statUI->SetDrawable( false );
                   m_inputUI->SetDrawable( false );
+                  // m_gameEndUI->SetDrawable( true );
                   m_bGameEnd = true;
                }
             }
