@@ -104,6 +104,29 @@ namespace BattleShip
       return '-';
    }
 
+   static std::string ShipTypeToName( ShipType type )
+   {
+      switch ( type )
+      {
+      case ShipType::DESTROYER:
+         return "Destroyer";
+
+      case ShipType::AIRCRAFT:
+         return "Aircraft";
+
+      case ShipType::BATTLESHIP:
+         return "BattleShip";
+
+      case ShipType::CRUISER:
+         return "Cruiser";
+
+      case ShipType::SHIP_NONE:
+         return "None";
+      }
+
+      return "Error";
+   }
+
    /* Range: [0, 10] => [A, K]**/
    static char NaturalNumberToAlpha( int number )
    {
@@ -204,4 +227,25 @@ namespace BattleShip
       HitResultType type;
       ShipType      ship;
    };
+
+   static std::string HitResultToString( HitResult res )
+   {
+      std::string result;
+      switch ( res.type )
+      {
+      case HitResultType::DESTROY:
+         result = ShipTypeToName( res.ship ) + " Destroyed!";
+         break;
+
+      case HitResultType::HIT:
+         result = "Hit!";
+         break;
+
+      default:
+         result = "Miss..";
+         break;
+      }
+
+      return result;
+   }
 }
