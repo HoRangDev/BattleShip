@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Sources\App.cpp" />
+    <ClCompile Include="..\Sources\GameEndUI.cpp" />
     <ClCompile Include="..\Sources\GameInstance.cpp" />
     <ClCompile Include="..\Sources\HitMap.cpp" />
     <ClCompile Include="..\Sources\InputUI.cpp" />
@@ -40,6 +41,7 @@
     <ClInclude Include="..\Sources\Common.h" />
     <ClInclude Include="..\Sources\Cruiser.h" />
     <ClInclude Include="..\Sources\Destroyer.h" />
+    <ClInclude Include="..\Sources\GameEndUI.h" />
     <ClInclude Include="..\Sources\GameInstance.h" />
     <ClInclude Include="..\Sources\HitMap.h" />
     <ClInclude Include="..\Sources\InputUI.h" />

@@ -62,6 +62,9 @@
     <ClCompile Include="..\Sources\UserInterface.cpp">
       <Filter>Sources\UI</Filter>
     </ClCompile>
+    <ClCompile Include="..\Sources\GameEndUI.cpp">
+      <Filter>Sources\UI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Sources\Common.h">
@@ -116,6 +119,9 @@
       <Filter>Sources\UI</Filter>
     </ClInclude>
     <ClInclude Include="..\Sources\InputUI.h">
+      <Filter>Sources\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sources\GameEndUI.h">
       <Filter>Sources\UI</Filter>
     </ClInclude>
   </ItemGroup>

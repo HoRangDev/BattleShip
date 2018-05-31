@@ -5,6 +5,7 @@
 #include "MapUI.h"
 #include "StatUI.h"
 #include "InputUI.h"
+#include "GameEndUI.h"
 
 namespace BattleShip
 {
@@ -15,6 +16,7 @@ namespace BattleShip
       m_defenderMapUI( nullptr ),
       m_statUI( nullptr ),
       m_inputUI( nullptr ),
+      m_gameEndUI( nullptr ),
       GameInstance( width, height,
                     GameMode::SUPERVISED )
    {
@@ -50,6 +52,11 @@ namespace BattleShip
                                IntVec2{ m_width * 3 + 6, 11 },
                                24, 17,
                                m_attackerMap );
+
+      m_gameEndUI = new GameEndUI( "< Game Over >",
+                                   IntVec2{ m_width * 3 + 6, 11 },
+                                   24, 17 );
+      m_gameEndUI->SetDrawable( false );
    }
 
    void SVGameInstance::Update( )
@@ -77,7 +84,7 @@ namespace BattleShip
                {
                   curs_set( 0 );
                   m_inputUI->SetDrawable( false );
-                  // m_gameEndUI->SetDrawable( true );
+                  m_gameEndUI->SetDrawable( true );
                   m_bGameEnd = true;
                }
             }

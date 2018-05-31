@@ -41,7 +41,7 @@ namespace BattleShip
    {
       if ( IsInBound( pos ) )
       {
-         if ( m_hitMap[ pos.y ][ pos.x ] != type )
+         if ( m_hitMap[ pos.y ][ pos.x ] == HitResultType::NONE )
          {
             m_hitMap[ pos.y ][ pos.x ] = type;
             return true;
