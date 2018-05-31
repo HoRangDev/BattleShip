@@ -79,14 +79,6 @@ namespace BattleShip
                      IncreaseTurnCount( );
                   }
                }
-
-               if ( m_defender->AllDestroyed( ) )
-               {
-                  curs_set( 0 );
-                  m_inputUI->SetDrawable( false );
-                  m_gameEndUI->SetDrawable( true );
-                  m_bGameEnd = true;
-               }
             }
          }
 
@@ -94,10 +86,14 @@ namespace BattleShip
          {
             m_statUI->SetTurn( GetTurnCount( ) );
          }
-      }
-      else
-      {
-         // @TODO: Impl Game End UI
+
+         if ( m_defender->AllDestroyed( ) )
+         {
+            curs_set( 0 );
+            m_inputUI->SetDrawable( false );
+            m_gameEndUI->SetDrawable( true );
+            m_bGameEnd = true;
+         }
       }
    }
 
