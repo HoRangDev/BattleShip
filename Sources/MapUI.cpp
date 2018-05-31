@@ -33,7 +33,7 @@ namespace BattleShip
          count = 0;
          while ( count < maxY )
          {
-            std::string printingStr{ NationalToAlphabet( count ) };
+            std::string printingStr{ NaturalNumberToAlpha( count ) };
             mvprintw( ( pos.y + count ) + offsetY + 1 ,
                       pos.x - 1,
                       printingStr.c_str( ) );

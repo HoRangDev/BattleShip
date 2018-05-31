@@ -104,7 +104,8 @@ namespace BattleShip
       return '-';
    }
 
-   static char NationalToAlphabet( int number )
+   /* Range: [0, 10] => [A, K]**/
+   static char NaturalNumberToAlpha( int number )
    {
       switch ( number )
       {
@@ -129,9 +130,63 @@ namespace BattleShip
       case 9:
          return 'J';
       case 10:
-         return 'L';
+         return 'K';
       default:
-         return 'N';
+         return 'L';
+      }
+   }
+
+   /* Range: [A(a), K(k)] => [0, 10]**/
+   static int AlphaToNaturalNumber( char alpha )
+   {
+      switch ( alpha )
+      {
+      case 'A':
+      case 'a':
+         return 0;
+
+      case 'B':
+      case 'b':
+         return 1;
+
+      case 'C':
+      case 'c':
+         return 2;
+
+      case 'D':
+      case 'd':
+         return 3;
+
+      case 'E':
+      case 'e':
+         return 4;
+
+      case 'F':
+      case 'f':
+         return 5;
+
+      case 'G':
+      case 'g':
+         return 6;
+
+      case 'H':
+      case 'h':
+         return 7;
+
+      case 'I':
+      case 'i':
+         return 8;
+
+      case 'J':
+      case 'j':
+         return 9;
+
+      case 'K':
+      case 'k':
+         return 10;
+
+      default:
+         return -1;
       }
    }
 
