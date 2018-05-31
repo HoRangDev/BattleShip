@@ -24,7 +24,7 @@ namespace BattleShip
          delwin( m_window );
       }
 
-      void SetDrawable( bool drawable ) { m_drawable = drawable; }
+      void SetDrawable( bool drawable );
       bool IsDrawable( ) const { return m_drawable; }
 
       IntVec2 GetPosition( ) const { return m_position; }
@@ -39,6 +39,8 @@ namespace BattleShip
             this->DrawImpl( );
          }
       }
+
+      virtual void Clear( ) final;
 
    protected:
       virtual void DrawImpl( ) = 0;

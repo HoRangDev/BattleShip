@@ -54,28 +54,41 @@ namespace BattleShip
 
    void SVGameInstance::Update( )
    {
-      if ( m_inputUI != nullptr )
+      if ( !m_bGameEnd )
       {
-         m_inputUI->Update( );
-         if ( m_inputUI->IsAbleToUseInput( ) )
+
+         if ( m_inputUI != nullptr )
          {
-            IntVec2 targetPos = m_inputUI->GetInput( );
-            auto hitRes = m_defender->HitCheck( targetPos );
-            m_inputUI->SetLatestHitResult( hitRes );
-            if ( m_attackerMap != nullptr )
+            m_inputUI->Update( );
+            if ( m_inputUI->IsAbleToUseInput( ) )
             {
-               m_attackerMap->CheckAs( targetPos, hitRes.type );
-               IncreaseTurnCount( );
+               IntVec2 targetPos = m_inputUI->GetInput( );
+               auto hitRes = m_defender->HitCheck( targetPos );
+               m_inputUI->SetLatestHitResult( hitRes );
+               if ( m_attackerMap != nullptr )
+               {
+                  m_attackerMap->CheckAs( targetPos, hitRes.type );
+                  IncreaseTurnCount( );
+               }
+
+               if ( m_defender->AllDestroyed( ) )
+               {
+                  curs_set( 0 );
+                  m_inputUI->SetDrawable( false );
+                  m_bGameEnd = true;
+               }
             }
          }
-      }
 
-      if ( m_statUI != nullptr )
+         if ( m_statUI != nullptr )
+         {
+            m_statUI->SetTurn( GetTurnCount( ) );
+         }
+      }
+      else
       {
-         m_statUI->SetTurn( GetTurnCount( ) );
+         // @TODO: Impl Game End UI
       }
-
-      // @TODO: Impl Game End
    }
 
    void SVGameInstance::Render( )

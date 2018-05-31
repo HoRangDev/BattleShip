@@ -31,6 +31,7 @@
     <ClCompile Include="..\Sources\SVGameInstance.cpp" />
     <ClCompile Include="..\Sources\Ship.cpp" />
     <ClCompile Include="..\Sources\ShipMap.cpp" />
+    <ClCompile Include="..\Sources\UserInterface.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Sources\Aircraft.h" />
