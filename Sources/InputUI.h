@@ -13,6 +13,8 @@ namespace BattleShip
                Map* attackerMap) : 
          m_bIsAbleToUseInput( false ),
          m_inputMessageStr( "Input(ex. A3): " ),
+         m_attackerMap( attackerMap ),
+         m_latestHit( { HitResultType::NONE, ShipType::SHIP_NONE } ),
          UserInterface( name, position,
                         width, height )
       {
@@ -21,6 +23,8 @@ namespace BattleShip
       void Update( );
       IntVec2 GetInput( ) const { return m_input; }
       bool IsAbleToUseInput( ) const { return m_bIsAbleToUseInput; }
+
+      void SetLatestHitResult( HitResult res ) { m_latestHit = res; }
 
    protected:
       virtual void DrawImpl( ) override;
@@ -31,6 +35,7 @@ namespace BattleShip
       IntVec2  m_input;
 
       Map* m_attackerMap;
+      HitResult m_latestHit;
 
    };
 }

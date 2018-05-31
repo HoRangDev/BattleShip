@@ -54,6 +54,34 @@ namespace BattleShip
       mvwprintw( m_window, 1, 1, m_inputMessageStr.c_str( ) );
       // clear input
       mvwprintw( m_window, 1, m_inputMessageStr.length( ) + 1, "  " );
+
+      auto color = ColorSet::WHITEBLACK;
+      switch ( m_latestHit.type )
+      {
+      case HitResultType::HIT:
+         color = ColorSet::GREENBLACK;
+         break;
+
+      case HitResultType::MISS:
+         color = ColorSet::YELLOWBLACK;
+         break;
+
+      case HitResultType::DESTROY:
+         color = ColorSet::YELLOWBLACK;
+         break;
+      }
+
+      // CLEAR
+      std::string space = " ";
+      for ( int x = 1; x < GetWidth( ); ++x )
+      {
+         mvwprintw( m_window, 2, x, space.c_str( ) );
+      }
+
+      // write result
+      wattron( m_window, COLOR_PAIR( color ) );
+      mvwprintw( m_window, 2, 1, HitResultToString( m_latestHit ).c_str( ) );
+      wattroff( m_window, COLOR_PAIR( color ) );
       wrefresh( m_window );
    }
 }

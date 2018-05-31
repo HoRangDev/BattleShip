@@ -9,7 +9,6 @@ namespace BattleShip
    {
       if ( !m_ships.empty( ) )
       {
-
          int y = 1;
          const int x = 2;
          wborder( m_window, '|', '|', '-', '-', '+', '+', '+', '+' );
@@ -39,9 +38,9 @@ namespace BattleShip
                   color = ColorSet::REDBLACK;
                }
 
-               wattron( m_window, color );
+               wattron( m_window, COLOR_PAIR( color ) );
                mvwprintw( m_window, y + 1, x, ss.str( ).c_str( ) );
-               wattroff( m_window, color );
+               wattroff( m_window, COLOR_PAIR( color ) );
 
                ++y;
             }

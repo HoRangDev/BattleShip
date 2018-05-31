@@ -6,9 +6,8 @@ namespace BattleShip
    class Cruiser : public Ship
    {
    public:
-      Cruiser( const IntVec2& position ) :
-         Ship( position,
-               ShipType::CRUISER, 3 )
+      Cruiser( ) :
+         Ship( ShipType::CRUISER, 3 )
       {
       }
 

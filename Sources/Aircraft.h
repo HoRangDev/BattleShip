@@ -7,9 +7,8 @@ namespace BattleShip
    class Aircraft : public Ship
    {
    public:
-      Aircraft( const IntVec2& position ) :
-         Ship( position,
-               ShipType::AIRCRAFT, 5)
+      Aircraft( ) :
+         Ship( ShipType::AIRCRAFT, 5 )
       {
       }
 

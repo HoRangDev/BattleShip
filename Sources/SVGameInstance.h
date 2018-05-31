@@ -3,6 +3,7 @@
 
 namespace BattleShip
 {
+   class HitMap;
    class ShipMap;
    class MapUI;
    class StatUI;
@@ -18,6 +19,7 @@ namespace BattleShip
 
    private:
       /* Dependency **/
+      HitMap*  m_attackerMap;
       ShipMap* m_defenderMap;
 
       /* UI **/

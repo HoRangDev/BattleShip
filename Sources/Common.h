@@ -241,7 +241,7 @@ namespace BattleShip
          result = "Hit!";
          break;
 
-      default:
+      case HitResultType::MISS:
          result = "Miss..";
          break;
       }

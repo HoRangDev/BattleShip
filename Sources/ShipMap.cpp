@@ -49,19 +49,19 @@ namespace BattleShip
       switch ( type )
       {
       case ShipType::AIRCRAFT:
-         newShip = new Aircraft( pos );
+         newShip = new Aircraft( );
          break;
 
       case ShipType::BATTLESHIP:
-         newShip = new BattleShip( pos );
+         newShip = new BattleShip( );
          break;
 
       case ShipType::CRUISER:
-         newShip = new Cruiser( pos );
+         newShip = new Cruiser( );
          break;
 
       case ShipType::DESTROYER:
-         newShip = new Destroyer( pos );
+         newShip = new Destroyer( );
          break;
 
       default:
@@ -105,10 +105,12 @@ namespace BattleShip
 
       // 이제 맵에 실제로 배치할 준비가 됨.
       currentPos = pos;
+      newShip->AddPosition( pos );
       while ( currentPos != finalPos )
       {
          m_map[ currentPos.y ][ currentPos.x ] = type;
          currentPos += delta;
+         newShip->AddPosition( currentPos );
       }
 
       m_ships.push_back( newShip );
@@ -124,12 +126,16 @@ namespace BattleShip
          {
             for ( auto ship : m_ships )
             {
-               if ( ship->GetPosition( ) == pos )
+               if ( (*ship) == pos )
                {
-                  ship->IncreaseHitCount( );
-                  if ( ship->IsDestroyed( ) )
+                  if ( !ship->IsAlreadyHit( pos ) )
                   {
-                     hitRes.type = HitResultType::DESTROY;
+                     ship->AddHitPosition( pos );
+                     ship->IncreaseHitCount( );
+                     if ( ship->IsDestroyed( ) )
+                     {
+                        hitRes.type = HitResultType::DESTROY;
+                     }
                   }
                }
             }
@@ -150,6 +156,7 @@ namespace BattleShip
       {
          if ( m_map[ pos.y ][ pos.x ] != ShipType::SHIP_NONE )
          {
+            if ( m_map[ pos.y ] )
             hitRes.type = HitResultType::HIT;
             hitRes.ship = m_map[ pos.y ][ pos.x ];
          }
