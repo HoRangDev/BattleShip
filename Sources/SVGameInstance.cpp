@@ -56,7 +56,6 @@ namespace BattleShip
    {
       if ( !m_bGameEnd )
       {
-
          if ( m_inputUI != nullptr )
          {
             m_inputUI->Update( );
