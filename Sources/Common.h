@@ -3,6 +3,7 @@
 
 #include <string>
 #include <random>
+#include <cstdlib>
 #include <curses.h>
 
 #define SAFE_DELETE(x) { if(x!=nullptr){delete x;} x = nullptr; }
