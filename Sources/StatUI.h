@@ -26,7 +26,7 @@ namespace BattleShip
 
       void SetTurn( int turn )
       {
-
+         m_turn = turn;
       }
 
    protected:
