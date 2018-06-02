@@ -157,7 +157,6 @@ namespace BattleShip
       {
          if ( m_map[ pos.y ][ pos.x ] != ShipType::SHIP_NONE )
          {
-            if ( m_map[ pos.y ] )
             hitRes.type = HitResultType::HIT;
             hitRes.ship = m_map[ pos.y ][ pos.x ];
          }
