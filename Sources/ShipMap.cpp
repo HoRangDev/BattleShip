@@ -106,12 +106,12 @@ namespace BattleShip
 
       // 이제 맵에 실제로 배치할 준비가 됨.
       currentPos = pos;
-      newShip->AddPosition( pos );
+
       while ( currentPos != finalPos )
       {
          m_map[ currentPos.y ][ currentPos.x ] = type;
-         currentPos += delta;
          newShip->AddPosition( currentPos );
+         currentPos += delta;
       }
 
       m_ships.push_back( newShip );
@@ -127,7 +127,7 @@ namespace BattleShip
          {
             for ( auto ship : m_ships )
             {
-               if ( (*ship) == pos )
+               if ( (*ship) == pos && ship->GetType( ) == hitRes.ship )
                {
                   if ( !ship->IsAlreadyHit( pos ) )
                   {
