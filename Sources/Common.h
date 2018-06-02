@@ -5,6 +5,8 @@
 #include <string>
 #include <random>
 #include <cstdlib>
+#include <chrono>
+#include <thread>
 #include <curses.h>
 
 #define SAFE_DELETE(x) { if(x!=nullptr){delete x;} x = nullptr; }

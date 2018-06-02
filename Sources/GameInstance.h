@@ -25,6 +25,8 @@ namespace BattleShip
             this->Update( );
             this->Render( );
          }
+
+         std::this_thread::sleep_for( std::chrono::seconds( 1 ) ); // wait for 1sec to end
       }
 
       GameMode GetMode( ) const { return m_mode; }
