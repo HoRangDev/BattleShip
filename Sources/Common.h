@@ -306,9 +306,9 @@ namespace BattleShip
       case Direction::UP:
          return Direction::RIGHT;
       case Direction::LEFT:
-         return Direction::NONE;
+         return Direction::UP;
       case Direction::RIGHT:
-         return Direction::DOWN;
+         return Direction::NONE;
       }
 
       return Direction::NONE;

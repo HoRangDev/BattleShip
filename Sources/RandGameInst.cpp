@@ -14,7 +14,7 @@ namespace BattleShip
       m_attackerMapUI( nullptr ), m_defenderMapUI( nullptr ),
       m_aiStatUI( nullptr ),
       m_totalTurn( 0 ),
-      m_findStage( FindStage::RandomPick ), m_bResearch( false ),
+      m_findStage( FindStage::RandomPick ),
       GameInstance( width, height, GameMode::RANDOM )
    {
    }
@@ -113,20 +113,18 @@ namespace BattleShip
             switch ( hitRes.type )
             {
             case HitResultType::HIT:
-               if ( isNewCheck || m_bResearch )
+               if ( isNewCheck )
                {
                   if ( m_findStage == FindStage::RandomPick )
                   {
                      m_findOrigin = targetPos;
                      m_findDir = Direction::DOWN;
                      m_findStage = FindStage::SearchDir;
-                     m_bResearch = false;
                   }
                   else if ( m_findStage == FindStage::SearchDir )
                   {
                      m_curFindPos = targetPos;
                      m_findStage = FindStage::Search;
-                     m_bResearch = false;
                   }
 
                   break;
@@ -150,8 +148,7 @@ namespace BattleShip
                else if ( m_findStage == FindStage::SearchOpposite )
                {
                   m_findStage = FindStage::SearchDir;
-                  m_findDir = NextDirection( OppositeOf( m_findDir ) );
-                  m_bResearch = true;
+                  m_findDir = Direction::DOWN;
                }
                break;
 
