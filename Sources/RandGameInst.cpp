@@ -14,6 +14,7 @@ namespace BattleShip
       m_attackerMapUI( nullptr ), m_defenderMapUI( nullptr ),
       m_aiStatUI( nullptr ),
       m_totalTurn( 0 ),
+      m_findStage( FindStage::RandomPick ), m_bResearch( false ),
       GameInstance( width, height, GameMode::RANDOM )
    {
    }
@@ -31,8 +32,6 @@ namespace BattleShip
                                  m_repeatCount );
 
       SetTurnCount( 0 );
-
-      //@TODO: Set AI Stat UI parameter
 
       if ( m_attackerMap != nullptr )
       {
@@ -77,25 +76,93 @@ namespace BattleShip
                                  24, 17 );
    }
 
+   IntVec2 RandGameInst::FindNext( )
+   {
+      IntVec2 res;
+      switch ( m_findStage )
+      {
+      case FindStage::RandomPick:
+         res.x = GenRandInt( 0, m_width );
+         res.y = GenRandInt( 0, m_height );
+         break;
+
+      case FindStage::SearchDir:
+         res = ( m_findOrigin + DirectionToVec( m_findDir ) );
+         break;
+
+      case FindStage::Search:
+      case FindStage::SearchOpposite:
+         res = ( m_curFindPos + DirectionToVec( m_findDir ) );
+         m_curFindPos = res;
+         break;
+      }
+
+      return res;
+   }
+
    void RandGameInst::Update( )
    {
       if ( !m_bGameEnd )
       {
          if ( m_repeatCount < m_maxRepeatCount )
          {
-            IntVec2 targetPos{ 0, 0 };
-            targetPos.x = GenRandInt( 0, m_width );
-            targetPos.y = GenRandInt( 0, m_height );
-
+            IntVec2 targetPos{ FindNext( ) };
+            
             auto hitRes = m_defender->HitCheck( targetPos );
-            if ( m_attackerMap != nullptr )
+            bool isNewCheck = m_attackerMap->CheckAs( targetPos, hitRes.type );
+            switch ( hitRes.type )
             {
-               m_aiStatUI->SetLatestSelection( targetPos.x, targetPos.y );
-               bool isNewCheck = m_attackerMap->CheckAs( targetPos, hitRes.type );
-               if ( isNewCheck )
+            case HitResultType::HIT:
+               if ( isNewCheck || m_bResearch )
                {
-                  IncreaseTurnCount( );
+                  if ( m_findStage == FindStage::RandomPick )
+                  {
+                     m_findOrigin = targetPos;
+                     m_findDir = Direction::DOWN;
+                     m_findStage = FindStage::SearchDir;
+                     m_bResearch = false;
+                  }
+                  else if ( m_findStage == FindStage::SearchDir )
+                  {
+                     m_curFindPos = targetPos;
+                     m_findStage = FindStage::Search;
+                     m_bResearch = false;
+                  }
+
+                  break;
                }
+
+            case HitResultType::MISS:
+               if ( m_findStage == FindStage::SearchDir )
+               {
+                  m_findDir = NextDirection( m_findDir );
+                  if ( m_findDir == Direction::NONE )
+                  {
+                     m_findStage = FindStage::RandomPick;
+                  }
+               }
+               else if ( m_findStage == FindStage::Search )
+               {
+                  m_findDir = OppositeOf( m_findDir );
+                  m_curFindPos = m_findOrigin;
+                  m_findStage = FindStage::SearchOpposite;
+               }
+               else if ( m_findStage == FindStage::SearchOpposite )
+               {
+                  m_findStage = FindStage::SearchDir;
+                  m_findDir = NextDirection( OppositeOf( m_findDir ) );
+                  m_bResearch = true;
+               }
+               break;
+
+            case HitResultType::DESTROY:
+               m_findStage = FindStage::RandomPick;
+               break;
+            }
+
+            if ( isNewCheck )
+            {
+               IncreaseTurnCount( );
             }
 
             if ( m_defender->AllDestroyed( ) )

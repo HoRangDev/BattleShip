@@ -20,6 +20,15 @@ namespace BattleShip
       DEFENDER
    };
 
+   enum class Direction
+   {
+      DOWN,
+      UP,
+      LEFT,
+      RIGHT,
+      NONE
+   };
+
    enum ColorSet
    {
       WHITEBLACK = 1,
@@ -251,5 +260,57 @@ namespace BattleShip
       }
 
       return result;
+   }
+
+   static IntVec2 DirectionToVec( Direction dir )
+   {
+      switch ( dir )
+      {
+      case Direction::DOWN:
+         return IntVec2{ 0, 1 };
+      case Direction::UP:
+         return IntVec2{ 0, -1 };
+      case Direction::LEFT:
+         return IntVec2{ -1, 0 };
+      case Direction::RIGHT:
+         return IntVec2{ 1, 0 };
+      }
+
+      return IntVec2{ 0, 0 };
+   }
+
+   static Direction OppositeOf( Direction dir )
+   {
+      switch ( dir )
+      {
+      case Direction::DOWN:
+         return Direction::UP;
+      case Direction::UP:
+         return Direction::DOWN;
+      case Direction::LEFT:
+         return Direction::RIGHT;
+      case Direction::RIGHT:
+         return Direction::LEFT;
+      }
+
+      return Direction::NONE;
+   }
+
+   // Clockwise, Only 1 cycle
+   static Direction NextDirection( Direction dir )
+   {
+      switch ( dir )
+      {
+      case Direction::DOWN:
+         return Direction::LEFT;
+      case Direction::UP:
+         return Direction::RIGHT;
+      case Direction::LEFT:
+         return Direction::NONE;
+      case Direction::RIGHT:
+         return Direction::DOWN;
+      }
+
+      return Direction::NONE;
    }
 }

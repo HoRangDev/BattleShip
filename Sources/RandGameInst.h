@@ -3,6 +3,14 @@
 
 namespace BattleShip
 {
+   enum class FindStage
+   {
+      RandomPick,
+      SearchDir,
+      Search,
+      SearchOpposite
+   };
+
    class RandGameInst : public GameInstance
    {
    public:
@@ -15,6 +23,8 @@ namespace BattleShip
       virtual void Update( ) override;
       virtual void Render( ) override;
 
+      IntVec2 FindNext( );
+
    private:
       /* Dependency **/
       class HitMap*  m_attackerMap;
@@ -23,6 +33,12 @@ namespace BattleShip
       int m_maxRepeatCount;
       int m_repeatCount;
       int m_totalTurn;
+
+      FindStage m_findStage;
+      IntVec2 m_findOrigin;
+      IntVec2 m_curFindPos;
+      Direction m_findDir;
+      bool     m_bResearch;
 
       /* UI **/
       class MapUI*      m_attackerMapUI;
