@@ -31,6 +31,7 @@ namespace BattleShip
 
       GameMode GetMode( ) const { return m_mode; }
       inline void IncreaseTurnCount( ) { ++m_turnCount; }
+      void SetTurnCount( int count ) { m_turnCount = count; }
       int GetTurnCount( ) const { return m_turnCount; }
 
       Player& GetAttacker( ) { return ( *m_attacker ); }

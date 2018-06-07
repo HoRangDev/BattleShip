@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\Sources\AIStatUI.cpp" />
     <ClCompile Include="..\Sources\App.cpp" />
     <ClCompile Include="..\Sources\GameEndUI.cpp" />
     <ClCompile Include="..\Sources\GameInstance.cpp" />
@@ -37,6 +38,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Sources\Aircraft.h" />
+    <ClInclude Include="..\Sources\AIStatUI.h" />
     <ClInclude Include="..\Sources\App.h" />
     <ClInclude Include="..\Sources\BattleShip.h" />
     <ClInclude Include="..\Sources\Common.h" />

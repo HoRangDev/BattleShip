@@ -12,7 +12,7 @@ int main( )
       "бс < BattleShip > бс",
       WindowWidth, WindowHeight,
       BoardWidth, BoardHeight,
-      BattleShip::GameMode::RANDOM };
+      BattleShip::GameMode::RANDOM, 3 };
 
    return app.Run( );
 }

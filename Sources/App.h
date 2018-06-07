@@ -10,7 +10,7 @@ namespace BattleShip
       App( 
          const std::string& name,
          int windowWidth, int windowHeight,
-         int width, int height, GameMode mode );
+         int width, int height, GameMode mode, int repeat = 1 );
       ~App( );
 
       int Run( );

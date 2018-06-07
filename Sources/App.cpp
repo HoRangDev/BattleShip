@@ -10,7 +10,7 @@ namespace BattleShip
 {
    App::App( 
       const std::string& name,
-      int windowWidth, int windowHeight, int width, int height, GameMode mode ) :
+      int windowWidth, int windowHeight, int width, int height, GameMode mode, int repeat ) :
       m_name( name ),
       m_windowWidth( windowWidth ),
       m_windowHeight( windowHeight ),
@@ -23,7 +23,7 @@ namespace BattleShip
          break;
 
       case GameMode::RANDOM:
-         m_gInst = new RandGameInst( width, height );
+         m_gInst = new RandGameInst( width, height, repeat );
          break;
 
       case GameMode::OPTIMAL:
