@@ -38,7 +38,6 @@ namespace BattleShip
       IntVec2 m_findOrigin;
       IntVec2 m_curFindPos;
       Direction m_findDir;
-      bool     m_bResearch;
 
       /* UI **/
       class MapUI*      m_attackerMapUI;
