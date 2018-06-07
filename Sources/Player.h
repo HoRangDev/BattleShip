@@ -27,8 +27,6 @@ namespace BattleShip
       PlayerType GetType( ) const { return m_type; }
       Map* GetMap( ) { return m_map; }
 
-      void ResetMap( );
-
    protected:
       Map*     m_map;
 

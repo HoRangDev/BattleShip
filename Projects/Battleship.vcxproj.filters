@@ -65,6 +65,9 @@
     <ClCompile Include="..\Sources\GameEndUI.cpp">
       <Filter>Sources\UI</Filter>
     </ClCompile>
+    <ClCompile Include="..\Sources\RandGameInst.cpp">
+      <Filter>Sources\Core</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Sources\Common.h">
@@ -123,6 +126,9 @@
     </ClInclude>
     <ClInclude Include="..\Sources\GameEndUI.h">
       <Filter>Sources\UI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Sources\RandGameInst.h">
+      <Filter>Sources\Core</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

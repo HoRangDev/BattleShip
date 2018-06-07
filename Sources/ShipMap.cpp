@@ -209,9 +209,13 @@ namespace BattleShip
       return true;
    }
 
+   char ShipMap::GetCharFrom( const IntVec2& pos ) const
+   {
+      return ShipTypeToChar( ConstHitCheck( pos ).ship );
+   }
+
    void ShipMap::Reset( )
    {
-      // Reset grid
       for ( int y = 0; y < m_height; ++y )
       {
          for ( int x = 0; x < m_width; ++x )
@@ -220,16 +224,15 @@ namespace BattleShip
          }
       }
 
-      // Reset ship list
       for ( auto ship : m_ships )
       {
-         delete ship;
+         if ( ship != nullptr )
+         {
+            delete ship;
+         }
       }
-      m_ships.clear( );
-   }
 
-   char ShipMap::GetCharFrom( const IntVec2& pos ) const
-   {
-      return ShipTypeToChar( ConstHitCheck( pos ).ship );
+      m_ships.clear( );
+      m_ships.shrink_to_fit( );
    }
 }

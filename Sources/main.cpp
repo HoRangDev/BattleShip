@@ -8,11 +8,11 @@ int main( )
    constexpr int BoardWidth = 10;
    constexpr int BoardHeight = 10;
 
-   BattleShip::App app{ 
+   BattleShip::App app{
       "бс < BattleShip > бс",
       WindowWidth, WindowHeight,
       BoardWidth, BoardHeight,
-      BattleShip::GameMode::SUPERVISED };
+      BattleShip::GameMode::RANDOM };
 
    return app.Run( );
 }

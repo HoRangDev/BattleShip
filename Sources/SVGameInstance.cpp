@@ -45,8 +45,8 @@ namespace BattleShip
 
       m_statUI = new StatUI( "< Status >",
                              IntVec2{ m_width * 3 + 6, 2 },
-                             24, 9,
-                             m_defenderMap->GetShipList( ) );
+                             24, 9 );
+      m_statUI->SetShipMap( m_defenderMap );
       m_statUI->SetTurn( GetTurnCount( ) );
 
       m_inputUI = new InputUI( "< Input >",

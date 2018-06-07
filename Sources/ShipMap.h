@@ -50,6 +50,7 @@ namespace BattleShip
       virtual char GetCharFrom( const IntVec2& pos ) const override;
 
       ShipList& GetShipList( ) { return m_ships; }
+      const ShipList& GetShipList( ) const { return m_ships; }
 
    private:
       HitResult ConstHitCheck( const IntVec2& pos ) const;

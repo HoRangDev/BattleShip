@@ -1,6 +1,7 @@
 // @Author Yang Kyowon(yangkyowon@kookmin.ac.kr)
 #include "App.h"
 #include "SVGameInstance.h"
+#include "RandGameInst.h"
 
 #include <curses.h>
 #include <string>
@@ -22,7 +23,7 @@ namespace BattleShip
          break;
 
       case GameMode::RANDOM:
-         // @TODO: Impl allocation of RandGameInstance
+         m_gInst = new RandGameInst( width, height );
          break;
 
       case GameMode::OPTIMAL:
